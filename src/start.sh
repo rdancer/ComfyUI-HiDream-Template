@@ -6,9 +6,8 @@ export LD_PRELOAD="${TCMALLOC}"
 
 # This is in case there's any special installs or overrides that needs to occur when starting the machine before starting ComfyUI
 if [ -f "/workspace/additional_params.sh" ]; then
-    chmod +x /workspace/additional_params.sh
-    echo "Executing additional_params.sh..."
-    /workspace/additional_params.sh
+    echo "Sourcing additional_params.sh..."
+    . /workspace/additional_params.sh
 else
     echo "additional_params.sh not found in /workspace. Skipping..."
 fi
